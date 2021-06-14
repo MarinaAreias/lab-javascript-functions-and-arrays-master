@@ -8,35 +8,30 @@ function maxOfTwoNumbers(num1, num2) {
 }
 
 // Iteration #2: Find longest word
-// tried .forEach()
-// tried .map
 
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
-
-function findLongestWord(array) {
-  let longestWord = '';
-  for (let i = 0; i < words.length; i++) {
-    if (array.length > longestWord) {
-      longest = array;
-    } else if (array === '') {
-      null;
-    }
-
-    return longestWord;
+function findLongestWord(arrayOfStrings) {
+  if (arrayOfStrings.length === 0) {
+    return null;
   }
+
+  let longestWord = '';
+  for (let i = 0; i < arrayOfStrings.length; i++) {
+    if (arrayOfStrings[i].length > longestWord.length) {
+      longestWord = arrayOfStrings[i];
+    }
+  }
+  return longestWord;
 }
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {
-  let totalSum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    totalSum += numbers[i];
-    continue;
+const totalSum = numbers.reduce(function sumNumbers(total, amount) {
+  if (total + amount === 0) {
+    return null;
   }
-  return totalSum;
-}
+  return total + amount;
+});
 
 // Iteration #3.1 Bonus:
 function sum() {}
@@ -75,7 +70,16 @@ function uniquifyArray() {}
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(arrayStrings) {
+  const wordsFind = ['machine', 'subset'];
+  wordsFind.map((word) => {
+    if (wordsFind.includes(word.wordInArray)) {
+      return 'it does exist';
+    } else {
+      return null;
+    }
+  });
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
